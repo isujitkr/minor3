@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
+import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import jwt_decode from "jwt-decode";
@@ -56,9 +56,7 @@ const Login = () => {
           </div>
 
           <div className="shadow-2x1">
-            <GoogleOAuthProvider
-              clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
-            >
+            
               <GoogleLogin
                 render={(renderProps) => (
                   <button
@@ -74,7 +72,7 @@ const Login = () => {
                 onFailure={onFailure}
                 cookiePolicy="single_host_origin"
               />
-            </GoogleOAuthProvider>
+            
           </div>
         </div>
       </div>
